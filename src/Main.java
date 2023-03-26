@@ -8,7 +8,7 @@ import java.util.List;
 public class Main {
 
     public static StringBuilder sbd = new StringBuilder();
-    public static StringBuilder sbf = new StringBuilder();
+
 
     public static void main(String[] args) {
 
@@ -31,8 +31,6 @@ public class Main {
         try (FileWriter writer = new FileWriter("D:/Games//temp/temp.txt", false)) {
             String text = sbd.toString();
             writer.write(text);
-            String text1 = sbf.toString();
-            writer.write(text1);
         } catch (IOException ex) {
 
             System.out.println(ex.getMessage());
@@ -59,10 +57,10 @@ public class Main {
         File dir = new File(file);
         try {
             if (dir.createNewFile())
-                sbf.append("Файл создан " + dir.getName());
+                sbd.append("Файл создан " + dir.getName());
             else
-                sbf.append("Что-то пошло не так");
-            sbf.append("\n");
+                sbd.append("Что-то пошло не так");
+            sbd.append("\n");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
